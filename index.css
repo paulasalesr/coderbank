@@ -1,0 +1,168 @@
+*{
+  box-sizing: border-box;
+}
+.background-color{
+  background-color:#D7C2B0;
+  display: block;
+  margin-block-start: -20px;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+.nav-head {
+    display: grid;
+    margin-block-start: 20px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    margin-left: 50px;
+    grid-template-columns: 50px 400px 1fr ;    
+    font-family: "Nunito", sans-serif;    
+    font-weight: 600;
+    font-style: normal;
+    color: #042d29;
+    
+  }
+
+  .nav-head .logo{
+    padding-top: 18px;
+  }
+
+ .coloring{
+    color: #b78c56;
+    
+  }
+  
+  .container-1{
+    background-color: #25330f;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; 
+    grid-template-rows: 2 fr 1fr
+                        2fr;
+    grid-area: auto;
+    margin-block-start: -10px;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+
+  .container-1 h3{
+    font-family: "Nunito", sans-serif;    
+    font-weight: 600;
+    font-size: 60px;
+    font-style: normal;
+    color: #d4c9b4;
+    padding-left: 130px;    
+    padding-top: 80px;
+  }
+
+  .container-1 img{
+    padding-top: 90px;
+    margin-right: 680px;
+    margin-left: -200px;
+    grid-area: 1/2/span 2;
+    position: static;
+  }
+
+  button#separateBtn{
+    display: grid;
+    grid-area: 3 / 1 ;
+    margin-left: 130px;
+    margin-right: 540px;
+    margin-bottom: 112px;
+    margin-top: 0px;
+    font-family: "Nunito", sans-serif;
+    font-weight: 500;
+    border: 8px;
+    color: #f8f4e9;
+    background: #a67f5d;
+    font-size: 18px;
+    line-height: 24px;
+    padding: 12px 15px;
+    border-radius: 30px;
+    border: 2px solid #a67f5d;
+    cursor: pointer;
+  }
+
+  input#textArea {
+    display: grid;
+    margin-left: 130px;
+    margin-right: 440px;
+    margin-bottom: 30px;
+    grid-template-columns: 1fr; 
+    grid-template-rows: 1.5 fr; 
+    font-family: "Nunito", sans-serif;
+    font-weight: 500;
+    border: 8px;
+    color: black;
+    font-size: 18px;
+    line-height: 24px;
+    padding: 12px 15px;
+    border-radius: 30px;
+    
+                    
+  }
+
+  button:hover {
+    background: #a67f5d;
+    transform: scale(1.07);
+    border: 2px solid #a67f5d;
+    color: #f1f2f0;
+    transition: 0.3s;
+  }
+
+  .container-2{
+    background-color: #d4c9b4;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; 
+    grid-template-rows: 2 fr 1fr
+                        2fr;
+    grid-area: auto;
+    margin-block-start: -14px;
+    margin-block-end: -26px;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+
+  .container-2 h3{
+    grid-area: 1 / 2 ;
+    font-family: "Nunito", sans-serif;    
+    font-weight: 600;
+    font-size: 50px;
+    font-style: normal;
+    color: #741102;
+    padding-right: 50px;
+    padding-left: 140px;    
+    padding-top: 80px;
+  }
+
+  .container-2 img{
+    padding-top: 90px;
+    margin-left: 160px;
+    grid-area: 1/1/span 2;
+  }
+
+  .container-2 button{
+    display: grid;
+    grid-area: 2/ 2 ;
+    margin-left: 150px;
+    margin-right: 300px;
+    margin-bottom: 92px;
+    margin-top: 2px;
+    font-family: "Nunito", sans-serif;
+    font-weight: 500;
+    border: 8px;
+    color: #f8f4e9;
+    background: #a67f5d;
+    font-size: 18px;
+    line-height: 24px;
+    padding: 12px 15px;
+    border-radius: 30px;
+    border: 2px solid #a67f5d;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: #a67f5d;
+    transform: scale(1.07);
+    border: 2px solid #a67f5d;
+    color: #f1f2f0;
+    transition: 0.3s;
+  }

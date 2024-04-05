@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <title>Document</title>
+
+    <script src="./index.js"></script>
+  </head>
+  <body>
+    <header class="background-color">
+      <div class="nav-head">
+        <img class="logo" src="../img/Prancheta 2@2x.png " width="36px">
+        <h2>Coder<span class="coloring">Bank</span></h2>      
+      </div>
+      
+    </header>
+    
+    <div class="container-1">
+      <h3>Simule seu <br>
+      empréstimo!</h3>
+      <img src="../img/undraw_transfer_money_re_6o1h.svg" width="400px">
+      
+      <input id="textArea" type="text" name="userName" size= 30 maxlength="20" placeholder="Por favor, insira seu nome." required/> 
+      <button id="separateBtn" onclick="dados()">Vamos começar!</button>
+
+      <!-- <form id="textArea">
+        <label>
+          <input id="textArea" type="text" name="userName" size= 30 maxlength="20" placeholder="Por favor, insira seu nome." required/> 
+        </label>
+        <button id="separateBtn">Vamos começar!</button>
+      </form> -->
+
+      <p id="text"></p>
+    </div>
+    <div class="container-2" id="result">
+      <p id="text2"></p>
+      <h3>Insira o valor <br> para calcular <br> as parcelas.</h3>
+      <img src="../img/undraw_online_banking_re_kwqh.svg" width="480px">
+      <input id="debt" type="text" name="userName" size= 30 maxlength="20" placeholder="Insira o valor total a ser simulado:" required/>
+      <input id="installments" type="text" name="userName" size= 30 maxlength="20" placeholder="Insira o número de parcelas:" required/>
+      <button onclick="parcelas()">Calcular!</button>
+      <p id="valor"></p>
+      <p id="total"></p>
+    </div>
+  </body>
+</html>
