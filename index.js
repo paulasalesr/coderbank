@@ -29,8 +29,9 @@ class User{
         this.maxInstallments + 
         "! Por favor, insira um número de parcelas válido."
       );
+      process.exit()
     }else{
-      alert("Resultado: " + this.debt/this.installments);
+      // alert("Resultado: " + this.debt/this.installments);
       this.totalInstallments.push(
         {
           nInstallment: this.installments,
@@ -51,16 +52,10 @@ const interestRate = 0.05;
 // botao.addEventListener("click", dados)
 
 function dados() {
-  let name = document.getElementById('textArea').value; 
-  // document.getElementById('textArea');
-  console.log(name)
-  // let name = prompt("Por favor, insira seu nome: ", "Coder Estudante");
-  client.setName(name);  
-  if (client.name == "") {
-    document.getElementById("text").innerHTML = "Usuário cancelou a simulação."
-  } else {
-    document.getElementById("text").innerHTML = "Olá, " + client.name + "! " + "Vamos iniciar a simulação das parcelas. "
-  }
+  let name = document.getElementById('textArea').value;
+  client.setName(name);
+  document.getElementById('textStudentName').innerText = "Olá, " + client.name + "! " + "Vamos iniciar a simulação das parcelas. ";
+  // document.getElementById("text").innerText += "Olá, " + client.name + "! " + "Vamos iniciar a simulação das parcelas. ";
 }
 
 function computeInstallmentWithInterest(debt = 0, {nInstallment}){
@@ -70,62 +65,46 @@ function computeInstallmentWithInterest(debt = 0, {nInstallment}){
   return null
 }
 
-// function getStandardDeviation (array) {
-//   const n = array.length
-//   const mean = array.reduce((a, b) => a + b) / n
-//   return Math.sqrt(array.map(x => Math.pow(x - mean, 2)).reduce((a, b) => a + b) / n)
-// }
-
 function showResults(){
   let all_data = JSON.parse(sessionStorage.getItem('all_data'));
   let results = JSON.parse(sessionStorage.getItem('results'));
+  let div = document.getElementById("valor")
+  let container = document.createElement("p");
   for (const data of all_data) {
-    let container = document.createElement("div");
     if(data?.total_com_juros){
       container.innerHTML = "<h3> " + data.total + "</h3>" +
       "<p> " + data.n_parcelas + "</p>" +
       "<p> " + data.parcela + "</p>" +
       "<p> " + data.total_com_juros + "</p>" +
       "<p> " + data.parcela_com_juros + "</p>" +
-      "<p>" + data.obs + "</p><br><br>"
+      "<p>" + data.obs + "</p>"
     }else{
       container.innerHTML = "<h3> " + data.total + "</h3>" +
       "<p> " + data.n_parcelas + "</p>" +
-      "<p> " + data.parcela + "</p><br><br>"
+      "<p> " + data.parcela + "</p>"
     }
-    document.body.append(container);
+    div.appendChild(container);
   }
-  
+  container = null;
   for (const result of results) {
-    let container = document.createElement("div");
+    container = document.getElementById("total")
     container.innerHTML = "<h3> " + result.simulados + "</h3>" +
     "<p> " + result.min_valor_devido + "</p>" +
-    "<p> " + result.max_valor_devido + "</p><br><br>"
-    document.body.append(container);
+    "<p> " + result.max_valor_devido + "</p>"
+    document.body.appendChild(container);
   }
 }
 
 function parcelas() {
   let debt = parseFloat(document.getElementById('debt').value); 
-  client.setName(client?.name == "" ? "Coder Estudante" : client?.name);
+  // client.setName(client?.name == "" ? "Coder Estudante" : client?.name);
   let installments = "";
-  // let debt = parseFloat(prompt("Inserir o valor total a ser dividido: "));
   client.setDebt(debt);
+  
   installments = document.getElementById('installments').value; 
   client.setInstallments(installments);
   client.installments = parseFloat(client.installments);
   client.calculate();
-
-  // do {
-  //   installments = document.getElementById('installments').value; 
-  //   // installments = prompt("Em quantas vezes deseja parcelar (min " + client.minInstallments + ", max. " + client.maxInstallments + ")?: \nOBS: Digite 'sair' para cancelar a operação.");
-  //   if(installments != "sair"){
-  //     client.setInstallments(installments);
-  //     client.installments = parseFloat(client.installments);
-  //     client.calculate();
-  //     console.log(client.installments);
-  //   }
-  // }while (installments != "sair");
 
   let clientDebt = client?.debt
   let allInstallments = [];
@@ -139,35 +118,21 @@ function parcelas() {
       o.debtWithInterest = computeInstallmentWithInterest(clientDebt, o);
       o.installmentWithInterest = o.debtWithInterest/o.nInstallment;
       data = {
-        "total": "Total" + client.debt,
+        "total": "Total: " + client.debt,
         "n_parcelas": "Número de Parcelas: " + o.nInstallment,
-        "parcela": "Parcela: " + o.installments,
+        "parcela": "Parcela: " + o.installments.toFixed(2),
         "total_com_juros": "Total com juros: " + o.debtWithInterest.toFixed(2),
         "parcela_com_juros": "Parcela com juros: " + o.installmentWithInterest.toFixed(2),
         "obs": "Para número de parcelas acima de " + client.minInstallmentsFreeTax + ", será acrescido de " + interestRate*100 + "% ao mês!"
       }
-      // alert(
-      //   "Total: " + client.debt +
-      //   "\nNúmero de Parcelas: " + o.nInstallment + 
-      //   "\nParcela: " + o.installments +
-      //   "\nTotal com juros: " + o.debtWithInterest.toFixed(2) +
-      //   "\nParcela com juros: " + o.installmentWithInterest.toFixed(2) +
-      //   "\n\nOBS: Para número de parcelas acima de " + client.minInstallmentsFreeTax + ", será acrescido de " + interestRate*100 + "% ao mês!"
-      // )
       allInstallments.push(o.debtWithInterest.toFixed(2));
       sessionStorage.setItem('debtWithInterest', o.debtWithInterest.toFixed(2));
     }else{
       data = {
         "total": "Total: " + client.debt,
         "n_parcelas": "Número de Parcelas: " + o.nInstallment,
-        "parcela": "Parcela: " + o.installments,
+        "parcela": "Parcela: " + o.installments.toFixed(2),
       }
-      // alert(
-      //   "Total: " + clientDebt +
-      //   "\nNúmero de Parcelas: " + o.nInstallment + 
-      //   "\nParcela: " + o.installments
-      // )
-      // document.getElementById("valor").innerHTML = data;
       allInstallments.push(o.installments.toFixed(2));
       sessionStorage.setItem('installments', o.installments.toFixed(2));
     }
@@ -183,5 +148,4 @@ function parcelas() {
   sessionStorage.setItem('all_data', JSON.stringify(all_data));
   sessionStorage.setItem("results", JSON.stringify(results));
   showResults();
-  // document.getElementById("valor").innerHTML = total;
 }

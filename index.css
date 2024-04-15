@@ -35,12 +35,12 @@
     background-color: #25330f;
     display: grid;
     grid-template-columns: 1.5fr 1fr; 
-    grid-template-rows: 2 fr 1fr
-                        2fr;
-    grid-area: auto;
-    margin-block-start: -10px;
+    grid-template-rows: 1fr 1fr;            
+    grid-area: 1 / 1;
     margin-left: -10px;
     margin-right: -10px;
+    container-type: normal;
+    height: 630px;
   }
 
   .container-1 h3{
@@ -50,15 +50,35 @@
     font-style: normal;
     color: #d4c9b4;
     padding-left: 130px;    
-    padding-top: 80px;
+    padding-top: 60px;
+    padding-bottom: 50px;
+    
   }
 
   .container-1 img{
-    padding-top: 90px;
+    padding-top: 120px;
     margin-right: 680px;
     margin-left: -200px;
-    grid-area: 1/2/span 2;
-    position: static;
+    grid-area: 1/2/span 2/span 3;
+  }
+
+  input#textArea {
+    display: grid;
+    grid-area: 2 / 1;
+    margin-left: 130px;
+    margin-right: 440px;
+    margin-bottom: 410px;
+    margin-top: -80px;
+    grid-template-columns: 1fr 1fr; 
+     
+    font-family: "Nunito", sans-serif;
+    font-weight: 500;
+    border: 8px;
+    color: black;
+    font-size: 18px;
+    line-height: 24px;
+    padding: 12px 15px;
+    border-radius: 30px;               
   }
 
   button#separateBtn{
@@ -66,8 +86,8 @@
     grid-area: 3 / 1 ;
     margin-left: 130px;
     margin-right: 540px;
-    margin-bottom: 112px;
-    margin-top: 0px;
+    margin-bottom: 800px;
+    margin-top: -380px;
     font-family: "Nunito", sans-serif;
     font-weight: 500;
     border: 8px;
@@ -81,13 +101,95 @@
     cursor: pointer;
   }
 
-  input#textArea {
-    display: grid;
+  button:hover {
+    background: #a67f5d;
+    transform: scale(1.07);
+    border: 2px solid #a67f5d;
+    color: #f1f2f0;
+    transition: 0.3s;
+  }
+
+  .nameSimulator p{
     margin-left: 130px;
     margin-right: 440px;
-    margin-bottom: 30px;
-    grid-template-columns: 1fr; 
-    grid-template-rows: 1.5 fr; 
+    margin-bottom: 120px;
+    margin-top: -160px;
+    background-color: #25330f; 
+    color: #f1f2f0;
+    font-family: "Nunito", sans-serif;
+    font-weight: 500;
+    container-type: normal;
+    height: 0px;
+  }
+
+  .container-2{
+    background-color: #d4c9b4;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; 
+    grid-template-rows: 2 fr 1fr
+                        2fr 1fr
+                        2fr 1fr
+                        2fr 1fr;
+    grid-area: 0 0 200px 600px;
+    margin-block-start: -14px;
+    margin-block-end: -26px;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+
+  .container-2 h3{
+    grid-area: 1 / 1 ;
+    font-family: "Nunito", sans-serif;    
+    font-weight: 600;
+    font-size: 50px;
+    font-style: normal;
+    color: #741102;
+    padding-right: 50px;
+    padding-left: 140px;    
+    padding-top: 60px;
+  }
+
+  .container-2 img{
+    padding-top: 170px;
+    margin-left: -120px;
+    grid-area: 1/2/span 3;
+  }
+
+  .container-2 button{
+    display: grid;
+    grid-area: 4/ 1 ;
+    margin-left: 150px;
+    margin-right: 420px;
+    margin-bottom: 42px;
+    padding-top: 20px;
+    font-family: "Nunito", sans-serif;
+    font-weight: 500;
+    border: 8px;
+    color: #f8f4e9;
+    background: #a67f5d;
+    font-size: 18px;
+    line-height: 24px;
+    padding: 12px 8px;
+    border-radius: 30px;
+    border: 2px solid #a67f5d;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: #a67f5d;
+    transform: scale(1.07);
+    border: 2px solid #a67f5d;
+    color: #f1f2f0;
+    transition: 0.3s;
+  }
+
+  input#debt{
+    margin-left: 150px;
+    margin-right: 300px;
+    margin-bottom: 110px;
+    margin-top: 2px;
+    margin-bottom: 20px;
+    grid-area: 2/ 1 / span 1;
     font-family: "Nunito", sans-serif;
     font-weight: 500;
     border: 8px;
@@ -96,73 +198,53 @@
     line-height: 24px;
     padding: 12px 15px;
     border-radius: 30px;
-    
-                    
   }
 
-  button:hover {
-    background: #a67f5d;
-    transform: scale(1.07);
-    border: 2px solid #a67f5d;
-    color: #f1f2f0;
-    transition: 0.3s;
-  }
-
-  .container-2{
-    background-color: #d4c9b4;
-    display: grid;
-    grid-template-columns: 1fr 1.5fr; 
-    grid-template-rows: 2 fr 1fr
-                        2fr;
-    grid-area: auto;
-    margin-block-start: -14px;
-    margin-block-end: -26px;
-    margin-left: -10px;
-    margin-right: -10px;
-  }
-
-  .container-2 h3{
-    grid-area: 1 / 2 ;
-    font-family: "Nunito", sans-serif;    
-    font-weight: 600;
-    font-size: 50px;
-    font-style: normal;
-    color: #741102;
-    padding-right: 50px;
-    padding-left: 140px;    
-    padding-top: 80px;
-  }
-
-  .container-2 img{
-    padding-top: 90px;
-    margin-left: 160px;
-    grid-area: 1/1/span 2;
-  }
-
-  .container-2 button{
-    display: grid;
-    grid-area: 2/ 2 ;
+  input#installments{
     margin-left: 150px;
     margin-right: 300px;
-    margin-bottom: 92px;
     margin-top: 2px;
+    margin-bottom: 20px;
+    grid-area: 3/ 1 / span 1;
     font-family: "Nunito", sans-serif;
     font-weight: 500;
     border: 8px;
-    color: #f8f4e9;
-    background: #a67f5d;
+    color: black;
     font-size: 18px;
     line-height: 24px;
     padding: 12px 15px;
     border-radius: 30px;
-    border: 2px solid #a67f5d;
-    cursor: pointer;
   }
 
-  button:hover {
-    background: #a67f5d;
-    transform: scale(1.07);
-    border: 2px solid #a67f5d;
-    color: #f1f2f0;
-    transition: 0.3s;
+  div#valor{
+    background: #d4c9b4;
+    display: grid;
+    gap: 80px;
+    padding-left: 150px;
+    padding-right: 300px;
+    padding-top: 2px;
+    padding-bottom: 20px;
+    font-family: "Nunito", sans-serif;
+    font-weight: 500;
+    grid-template-columns: repeat(6, 200px); 
+    height: fit-content;
+    width: 300px;
+
+
+  
+  }
+  div#total{
+    background: #d4c9b4;
+    background-size: cover;
+    display: grid;
+    column-gap: 15px;
+    row-gap: -30px;
+    padding-left: 150px;
+    padding-right: 300px;
+    margin-top: -200px;
+    padding-bottom: 10px;
+    font-family: "Nunito", sans-serif;
+    font-weight: 500;
+    width: fit-content;
+    height: fit-content;
   }

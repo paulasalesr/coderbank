@@ -27,16 +27,10 @@
       
       <input id="textArea" type="text" name="userName" size= 30 maxlength="20" placeholder="Por favor, insira seu nome." required/> 
       <button id="separateBtn" onclick="dados()">Vamos começar!</button>
-
-      <!-- <form id="textArea">
-        <label>
-          <input id="textArea" type="text" name="userName" size= 30 maxlength="20" placeholder="Por favor, insira seu nome." required/> 
-        </label>
-        <button id="separateBtn">Vamos começar!</button>
-      </form> -->
-
-      <p id="text"></p>
     </div>
+    <div class="nameSimulator">
+      <p id="textStudentName"></p>
+      </div>
     <div class="container-2" id="result">
       <p id="text2"></p>
       <h3>Insira o valor <br> para calcular <br> as parcelas.</h3>
@@ -44,8 +38,10 @@
       <input id="debt" type="text" name="userName" size= 30 maxlength="20" placeholder="Insira o valor total a ser simulado:" required/>
       <input id="installments" type="text" name="userName" size= 30 maxlength="20" placeholder="Insira o número de parcelas:" required/>
       <button onclick="parcelas()">Calcular!</button>
-      <p id="valor"></p>
-      <p id="total"></p>
+    </div>
+    <div id="valor">
+    </div>
+    <div id="total">
     </div>
   </body>
 </html>
