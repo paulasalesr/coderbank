@@ -218,33 +218,45 @@
 
   div#valor{
     background: #d4c9b4;
+    background-color: #d4c9b4;
     display: grid;
-    gap: 80px;
+    grid-area: 1/ 1 / span 1;
+    column-gap: 15px;
+    row-gap: -30px;
     padding-left: 150px;
     padding-right: 300px;
-    padding-top: 2px;
-    padding-bottom: 20px;
+    margin-top: -100px;
+    padding-bottom: 10px;
     font-family: "Nunito", sans-serif;
     font-weight: 500;
-    grid-template-columns: repeat(6, 200px); 
-    height: fit-content;
-    width: 300px;
+    grid-template-columns: repeat(6, 300px); 
+    margin-block-start: -14px;
+    margin-block-end: -26px;
+    margin-left: -10px;
+    margin-right: -10px;
+
 
 
   
   }
   div#total{
     background: #d4c9b4;
-    background-size: cover;
+    background-color: #d4c9b4;
     display: grid;
+    grid-area: 3/ 1 / span 1;
     column-gap: 15px;
     row-gap: -30px;
     padding-left: 150px;
     padding-right: 300px;
-    margin-top: -200px;
+    margin-top: -100px;
     padding-bottom: 10px;
     font-family: "Nunito", sans-serif;
     font-weight: 500;
-    width: fit-content;
-    height: fit-content;
+    grid-template-columns: repeat(6, 300px); 
+    grid-template-rows: repeat(3, 200px);
+    margin-block-start: -14px;
+    margin-block-end: -26px;
+    margin-left: -10px;
+    margin-right: -10px;
+    
   }
